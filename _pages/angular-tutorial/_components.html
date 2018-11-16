@@ -4,14 +4,56 @@
 <h2>{{ title }}</h2>
 
 <p>little what</p>
+A component is a structual helper to organise our application.
 
 <h3>Warum</h3>
-fundamental building blocks
-application itself is a component
-break your application into small components
+Components are the fundamental building blocks of an angular application.
+The concept of a component helps us to create a strategy how to seperate our frontend.
+They help us to devide every aspect of our application into small and maintainable software-components.
+Even the application itself is a component.
+<!-- Image Placeholder -->
 <h3>Was</h3>
+A component consists of two main parts that help us to split different concerns.
+
+First there is the component class that defines the data structure and behavior of a specific component.
+This class is a plain implementation of your business logic.
+
+The second part is the @Component decorator that connects your plain business logic to Angular.
+In this decorator we configure angular specific details about the component.
+<!--  -->
 Code Example
-@Component Decorator
+<code>
+  @Component({
+    selector: 'book-list',
+    template: `
+      <h1>
+        Book-Title: {{title}}
+      </h1>
+    `
+  })
+  class BookListComponent {
+    title: string;
+    constructor() {
+      this.title = 'An awesome book';
+    }
+  }
+</code>
+
+Let's take a look at these components in detail.
+
+<h4>@Component Decorator</h4>
+The @Component Decorator is used to setup metadata and the configuration of a specific component.
+There are many and powerful possibilites to configure components for different needs.
+At this point we'll focus on the basic two options `select` and `template` respective `templateUrl` if we want to link a file.
+
+<code>
+    @Component({
+      selector: 'book-detail',
+      templateUrl: './book-detail.html'
+    })
+    export class BookDetailComponent {}
+</code>
+
 <h3>Wie</h3>
 Component metadata / configuration
 Code Example
