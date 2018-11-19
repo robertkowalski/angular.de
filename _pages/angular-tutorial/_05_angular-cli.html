@@ -7,6 +7,7 @@ Die Angular-CLI ist teil von Angular und generiert neue Anwendungen und hilft be
 Generieren von neuen Komponenten. Dies ist der Standard-Weg, um Angular zu nutzen.
 {% endcapture %}
 
+<!-- why -->
 {% capture why %}
 <h3>Warum gibt es die CLI überhaupt?</h3>
 
@@ -37,29 +38,58 @@ Die CLI löst diese Dinge, lässt aber auch Freiraum für kompliziertere Szenari
 {% endcapture %}
 
 
+<!-- what -->
 {% capture what %}
 <h3>Was liefert</h3>
 
 Die CLI nutzt unter der Haube Webpack. Webpack hat sich mittlerweile als
 Standard-Build-Tool für alle möglichen Web-Anwendungen etabliert.
 
-Based on
-  ember-cli
-  Webpack
+Zum Start versteckt Angular-CLI die Konfiguration von Angular-CLI. Für spätere
+spezial-Anpassungen ist es aber jederzeit möglich mit `ng eject` die vollständige
+Konfiguration in das aktuelle Projekt zu kopieren.
 
+So könnt ihr mit einem Projekt starten:
 
+```bash
+ng create blub
+```
+
+Alle weiteren Befehle lernt in Stück später:
+
+* Generieren von Komponenten, etc.
+* Starten der Entwicklungsumgebung
+* Vorbereitung für das Live-Schalten
 {% endcapture %}
 
 
+<!-- how -->
+{% capture how %}
+### Create a new project
 
+Create new project with angular-cli:
 
-<h3>Wie</h3>
-TASK
-Task Intro / Explanation
-Overview of commands
+    ng new PROJECT_NAME
 
-Type ng -v in your command line
-Preparation & Create new Project
+Go into project directory:
+
+    cd PROJECT_NAME
+
+Start project (watchers + build process):
+
+    ng serve
+
+### Open project in browser
+
+  * Open your browser with the address http://localhost:4200/
+  * open in IDE (exclude dist and tmp in Webstorm)
+
+#### Change the default prefix
+
+  * Open the file `angular.json`
+  * Change `projects.<PROJECT_NAME>.prefix` from `"app"` to `""`
+
+{% endcapture %}
 
 
 {% include _tutorial.html %}
