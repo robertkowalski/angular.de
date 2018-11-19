@@ -3,37 +3,34 @@
 
 <!-- little what -->
 {% capture little_what %}
+Module helfen die Applikation ist kleinere Bereiche aufzuteilen.
+Hier bietet sich eine Fachliche Aufteilung an.
 {% endcapture %}
 
 <!-- why -->
 {% capture why %}
-{% endcapture %}
-
-<!-- what -->
-{% capture what %}
-{% endcapture %}
-
-<!-- how -->
-{% capture how %}
-{% endcapture %}
-
-{% include _tutorial.html %}
-
-
-
-<p>little what</p>
+Eine größere Applikation brauch Struktur, um wartbar zu sein.
+Neben einen vernünftigen Verzeichnisstruktur,
 
 <h3>Warum</h3>
 General
   Groups code and files
   Solves a specific problem/deal with a specific topic
   Shares functionalities between Angular modules
+{% endcapture %}
+
+<!-- what -->
+{% capture what %}
 <h3>Was</h3>
 Decotrator
   Defines the parts of the module, e.g. components, directives, ...
   Import dependencies
   Export parts to other modules
   Set base component
+{% endcapture %}
+
+<!-- how -->
+{% capture how %}
 <h3>Wie</h3>
 Code Example
 Bootstrap function
@@ -41,4 +38,9 @@ Your application needs a starting point!
 The bootstrap function defines the main module
 Code Example
 TASK: Generate two Submodules
+{% endcapture %}
+
+{% include _tutorial.html %}
+
+
 

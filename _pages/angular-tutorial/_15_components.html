@@ -1,17 +1,22 @@
 {% assign title = "Komponenten" %}
 {% assign slide_id = "g15b2460d35_8_828" %}
 
-<h2>{{ title }}</h2>
-
-<p>little what</p>
+<!-- little what -->
+{% capture little_what %}
 A component is a structual helper to organise our application.
+{% endcapture %}
 
+<!-- why -->
+{% capture why %}
 <h3>Warum</h3>
 Components are the fundamental building blocks of an angular application.
 The concept of a component helps us to create a strategy how to seperate our frontend.
 They help us to devide every aspect of our application into small and maintainable software-components.
 Even the application itself is a component.
-<!-- Image Placeholder -->
+{% endcapture %}
+
+<!-- what -->
+{% capture what %}
 <h3>Was</h3>
 A component consists of two main parts that help us to split different concerns.
 
@@ -22,22 +27,22 @@ The second part is the @Component decorator that connects your plain business lo
 In this decorator we configure angular specific details about the component.
 <!--  -->
 Code Example
-<code>
-  @Component({
-    selector: 'book-list',
-    template: `
-      <h1>
-        Book-Title: {{title}}
-      </h1>
-    `
-  })
-  class BookListComponent {
-    title: string;
-    constructor() {
-      this.title = 'An awesome book';
-    }
+```typescript
+@Component({
+  selector: 'book-list',
+  template: `
+    <h1>
+      Book-Title: {{title}}
+    </h1>
+  `
+})
+class BookListComponent {
+  title: string;
+  constructor() {
+    this.title = 'An awesome book';
   }
-</code>
+}
+```
 
 Let's take a look at these components in detail.
 
@@ -46,19 +51,27 @@ The @Component Decorator is used to setup metadata and the configuration of a sp
 There are many and powerful possibilites to configure components for different needs.
 At this point we'll focus on the basic two options `select` and `template` respective `templateUrl` if we want to link a file.
 
-<code>
-    @Component({
-      selector: 'book-detail',
-      templateUrl: './book-detail.html'
-    })
-    export class BookDetailComponent {}
-</code>
+```typescript
+@Component({
+  selector: 'book-detail',
+  templateUrl: './book-detail.html'
+})
+export class BookDetailComponent {}
+```
+{% endcapture %}
 
-<h3>Wie</h3>
+<!-- how -->
+{% capture how %}
 Component metadata / configuration
 Code Example
 API-Overview
 Template Bindings
 Component Class
 Generate a Navigation Component
+{% endcapture %}
+
+{% include _tutorial.html %}
+
+
+
 
