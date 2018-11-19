@@ -1,24 +1,65 @@
 {% assign title = "Angular CLI" %}
 {% assign slide_id = "g15b2460d35_8_747" %}
 
-<h2>{{ title }}</h2>
+<!-- little what -->
+{% capture little_what %}
+Die Angular-CLI ist teil von Angular und generiert neue Anwendungen und hilft beim
+Generieren von neuen Komponenten. Dies ist der Standard-Weg, um Angular zu nutzen.
+{% endcapture %}
 
-<p>little what</p>
+{% capture why %}
+<h3>Warum gibt es die CLI überhaupt?</h3>
 
-<h3>Warum</h3>
-No more seeds and fragmentation
-No more discussions about style
-Proven directory structure
-<h3>Was</h3>
+**Einfacher Start:** Im Laufe der Zeit entwickeln sich Best Practices,
+womit Anwendungen auch auf Dauer besser pflegbar sind. Bei Version 1 des Frameworks
+existierte dazu ein Style-Guide. Dieses bestand aus etlichen Seiten. Besonders für
+Anfänger, die sich überhaupt erstmal mit den grundlegenden Dingen des Frameworks
+beschäftigen, ist dies eine Überforderung. Was eignet es sich da besser, als
+Generatoren mitzuliefern, die schon eine gute Grundlage liefern?
+
+**Vereinheitlichung des Styles:** Das ein Framework einen nicht zu sehr einengt ist
+wichtig. Allerdings sind manche Dinge nicht kriegsentscheidend. Z.B. Diskussionen,
+ob man einen Dateinamen in CamelCase oder mit Unterstrichen schreibt.
+
+**Übertragbarkeit:** Du einen festgelegten Aufbau ist es viel einfacher sich in
+einem neuen Projekt zurechtzufinden. Es ist unwahrscheinlich, dass ihr nur ein
+einziges Angular-Projekt in eurem Leben betreuen werdet. Umso besser, wenn ihr
+nicht jedes mal neu überlegen müsst, wo sich grundlegende Dinge, befinden.
+
+**Bewahrt vor komplizierter Konfiguration zum Start:**
+Webentwicklung ist in jeglicher Hinsicht komplizierter geworden. Wir möchten
+große Webapplikationen in kleine Bundles aufteilen, Hot-Reloading ist nett,
+damit wird schneller Änderungen sehen, in der Live-Umgebung möchten wir
+Hashes an unsere Dateinamen anhängen. Das sind eigentlich grundlegende Dinge
+mittlerweile und trotzdem verbringen etliche Entwickler die erste Woche damit,
+diese einzurichten - ohne auch nur ein Stück mit der Applikation weiterzukommen.
+Die CLI löst diese Dinge, lässt aber auch Freiraum für kompliziertere Szenarios.
+{% endcapture %}
+
+
+{% capture what %}
+<h3>Was liefert</h3>
+
+Die CLI nutzt unter der Haube Webpack. Webpack hat sich mittlerweile als
+Standard-Build-Tool für alle möglichen Web-Anwendungen etabliert.
+
 Based on
   ember-cli
   Webpack
+
+
+{% endcapture %}
+
+
+
+
 <h3>Wie</h3>
 TASK
 Task Intro / Explanation
 Overview of commands
 
 Type ng -v in your command line
-Update version to the version your trainer recommends :)
 Preparation & Create new Project
 
+
+{% include _tutorial.html %}
