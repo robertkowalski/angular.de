@@ -1,12 +1,30 @@
 {% assign title = "Einleitung" %}
 {% assign slide_id = "g1393d1fd82_0_5" %}
 
-<h2>{{ title }}</h2>
-
-<p>Angular ist ein Framework für Single-Page Applikationen im Web.
+<!-- little what -->
+{% capture little_what %}
+Angular ist ein Framework für Single-Page Applikationen im Web.
   Angefangen mit der Installation lernst du, wie du deine erste
   Anwendung damit erstellt.
-</p>
+{% endcapture %}
+
+{% capture why %}
+### Warum Angular?
+
+Das Web war eine ziemlich lange Zeit einfach statisch war und bestand eigentlich
+nur aus Texten. Irgendwann wurden dann die ersten Anwendungen im Web geschrieben.
+Was damals dazu genutzt wurde war mehr oder weniger JavaScript oder
+Unterstützung eines Frameworks, was die Erstellung von Applikationen
+im Web einfacher macht.
+Angular hilft also dabei, Applikationen im Web um einiges einfacher zu entwickeln.
+Besonders, wenn es dabei um viel Interaktivität geht.
+
+{% endcapture %}
+
+
+{% include _tutorial.html %}
+
+
 
 <h3>Warum Angular?</h3>
 
