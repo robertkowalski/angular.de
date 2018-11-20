@@ -23,13 +23,11 @@ hinweg wiederverwendet werden.
 
 <!-- what -->
 {% capture what %}
-<h3>Was</h3>
-Decorator
-  Defines the parts of the module, e.g. components, directives, ...
-  Import dependencies
-  Export parts to other modules
-  Set base component
+### Was
 
+#### Decorator
+
+Module werden über den Decorator `@NgModule` erzeugt. Er sieht beispielhaft folgendermaßen aus:
 
 ```typescript
 @NgModule({
@@ -46,32 +44,49 @@ Decorator
 export class AppModule {} // in most cases an empty class
 ```
 
-```typescript
-@NgModule({
-  declarations: [
-    SharedComponent
-  ],
-  exports: [
-    SharedComponent // make declared stuff available outside of SubModule
-  ],
-  imports: [],
-  providers: []
-})
-export class SubModule {}
-```
+Die Optionen dafür umfassen folgende Möglichkeiten:
 
+* `declarations`: Hier werden **Components / Directives und Pipes** angegeben. Diese gelten dann für das gesamte Modul.
+* `imports`: Hier werden **andere Module** angegeben.
+* `providers`: Hier werden **Services** angegeben.
+* `bootstrap`: Hier wird die **Root-Component** angegeben. Dies darf nur einmal innerhalb einer Applikation angegeben werden. (mehr im nächsten Abschnitt)
 
 {% endcapture %}
 
+#### bootstrapModule
+
+Neben der Deklaration den Root-Komponente muss für in einem Modul, muss dieses Modul
+einmal über die `bootstrapModule`-Funktion aufgerufen werden.
+Dies ist vergleich mit der `main`-Methode in Programmiersprachen wie z.B. Java.
+
+
+```typescript
+// app.module.ts
+@NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+
+// main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+Wer sich fragt, was `platformBrowserDynamic()` bedeutet - Hier können unterschiedliche
+umgebungen angegeben werden. `platformBrowser()` z.B. für Mobile-Apps. Genauer werden
+wir in diesem Tutorial nicht darauf eingehen
+
+
 <!-- how -->
 {% capture how %}
-<h3>Wie</h3>
-Code Example
-Bootstrap function
-Your application needs a starting point!
-The bootstrap function defines the main module
-Code Example
-TASK: Generate two Submodules
+
+* Generate 2 sub Modules (about, books)
+* Generate for each of these Modules a Root Component named like the Module
+* Import the Modules into your AppModule (or use the protip while generating)
+* use BooksComponent in app.component.html and check the devTools
+
 {% endcapture %}
 
 {% include _tutorial.html %}
